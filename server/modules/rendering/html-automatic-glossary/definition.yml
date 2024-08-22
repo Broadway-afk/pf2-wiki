@@ -1,0 +1,14 @@
+key: htmlAutomaticGlossary
+title: Glossary
+description: Automatic cross-link generator
+author: Broadway-afk
+enabledDefault: true
+dependsOn: htmlCore
+icon: mdi-book-alphabet
+props:
+  entries:
+    type: Text
+    title: Glossary entries
+    hint: Use JSON markdown
+    default: true
+    order: 1

@@ -115,6 +115,15 @@
                 persistent-hint
                 inset
                 )
+              v-textarea(
+                v-else-if='cfg.value.type === "text"'
+                :key='cfg.key'
+                :label='cfg.value.title'
+                variant='outlined'
+                v-model='cfg.value.value'
+                auto-grow
+                color='indigo'
+              )
               v-text-field(
                 v-else
                 outlined
@@ -165,6 +174,7 @@ export default {
       this.renderers.map(rdr => {
         if (_.some(rdr.children, ['key', key])) {
           this.currentRenderer = _.find(rdr.children, ['key', key])
+          console.log("=>(admin-rendering.vue:147) this.currentRenderer", this.currentRenderer.config)
         }
       })
     },
